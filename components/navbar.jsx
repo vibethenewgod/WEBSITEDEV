@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-0 flex-shrink-0 mr-auto -ml-16">
+            <Link href="/" className="flex items-center gap-0 flex-shrink-0 mr-auto -ml-4 md:-ml-6">
               <Image src="/images/logo.png" alt="Tomi Law Office Logo" width={50} height={50} style={{ width: "auto", height: "50px" }} />
               <span className="text-[#1E72C8] text-lg md:text-xl font-serif italic tracking-normal -ml-6">Tomi Law Office</span>
             </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
             {/* Mobile toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-[#1A1A1A] p-2 -ml-16"
+              className="lg:hidden text-[#1A1A1A] p-2"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -85,7 +85,7 @@ export default function Navbar() {
       {/* Mobile Nav */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
-          <div className="container mx-auto py-4 px-4 -ml-16">
+          <div className="container mx-auto py-4 px-4">
             <nav className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <Link

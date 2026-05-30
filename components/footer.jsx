@@ -26,13 +26,13 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1A1A1A] text-white">
-      <div className="container mx-auto py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-start text-center sm:text-left">
 
           {/* Logo and About */}
-          <div>
+          <div className="space-y-4">
             <Link href="/">
-              <div className="flex items-center mb-4">
+              <div className="flex items-center justify-center sm:justify-start gap-3 mb-4">
                 <Image
                   src="/images/logo.png"
                   alt="Tomi Law Office Logo"
@@ -43,8 +43,8 @@ export default function Footer() {
                 <div className="text-white text-2xl font-semibold tracking-wider ml-2">TOMI LAW OFFICE</div>
               </div>
             </Link>
-            <div className="text-gray-300 text-sm mb-6">
-              <p className="mb-3">
+            <div className="text-gray-300 text-sm">
+              <p>
                 At Tomi Law Office, our goal is to provide efficient and affordable legal services. We take the time to
                 listen to our clients, understand their needs and offer practical solutions to their individual or
                 corporate needs.
@@ -53,40 +53,44 @@ export default function Footer() {
           </div>
 
           {/* Offices + Contact */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Offices</h3>
-            <ul className="space-y-2 mb-6">
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white font-medium">
-                  Tisdale
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white font-medium">
-                  Nipawin
-                </Link>
-              </li>
-            </ul>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">Offices</h3>
+              <ul className="space-y-3 mb-6">
+                <li>
+                  <Link href="/contact" className="text-gray-300 hover:text-white font-medium">
+                    Tisdale
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-gray-300 hover:text-white font-medium">
+                    Nipawin
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="tel:+13068734521" className="text-gray-300 hover:text-white font-medium transition-colors">
-                  Tisdale: 306-873-4521
-                </a>
-              </li>
-              <li>
-                <a href="tel:+13068624511" className="text-gray-300 hover:text-white font-medium transition-colors">
-                  Nipawin: 306-862-4511
-                </a>
-              </li>
-            </ul>
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="tel:+13068734521" className="text-gray-300 hover:text-white font-medium transition-colors">
+                    Tisdale: 306-873-4521
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+13068624511" className="text-gray-300 hover:text-white font-medium transition-colors">
+                    Nipawin: 306-862-4511
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Practice Areas */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Practice Areas</h3>
-            <ul className="space-y-2">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold mb-3">Practice Areas</h3>
+            <ul className="space-y-3">
               {practiceAreas.map((area) => {
                 const isActive = pathname === area.href
                 return (
@@ -108,9 +112,9 @@ export default function Footer() {
           </div>
 
           {/* Follow Us + Subscribe */}
-          <div>
+          <div className="space-y-4">
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4 mb-4">
+            <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-4">
               <a
                 href="https://www.facebook.com/tomilawoffice"
                 target="_blank"
@@ -147,7 +151,7 @@ export default function Footer() {
             <div className="mb-4">
               <Link
                 href="/contact"
-                className="inline-block bg-[#1E72C8] text-white px-6 py-3 font-medium hover:bg-[#6BBFEA] transition-colors w-full sm:w-auto text-center"
+                className="inline-block bg-[#1E72C8] text-white px-6 py-3 font-medium hover:bg-[#6BBFEA] transition-colors w-full sm:w-auto text-center mx-auto sm:mx-0"
               >
                 Subscribe
               </Link>
@@ -160,13 +164,13 @@ export default function Footer() {
 
         <hr className="border-t border-[#D8E6F3] my-8" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 text-center md:text-left">
+          <div className="text-center md:text-left">
             <p className="text-gray-400 text-sm font-medium">
               &copy; {new Date().getFullYear()} Tomi Law Office. All rights reserved.
             </p>
           </div>
-          <div className="flex flex-wrap gap-4 md:gap-6 text-sm font-medium">
+          <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 text-sm font-medium">
             <Link href="#privacy" className="text-gray-400 hover:text-white">Privacy Policy</Link>
             <Link href="#disclaimer" className="text-gray-400 hover:text-white">Disclaimer</Link>
             <Link href="#terms" className="text-gray-400 hover:text-white">Terms of Service</Link>
