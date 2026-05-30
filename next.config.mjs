@@ -1,3 +1,6 @@
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
 let userConfig = undefined
 try {
   userConfig = await import('./v0-user-next.config')
@@ -5,11 +8,13 @@ try {
   // ignore error
 }
 
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/TOMI-LAW-OFFICE-' : '',
-  eslint: {
-    ignoreDuringBuilds: true,
+  turbopack: {
+    root: __dirname,
   },
   typescript: {
     ignoreBuildErrors: true,
